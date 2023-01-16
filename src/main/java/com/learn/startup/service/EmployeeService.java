@@ -26,17 +26,16 @@ public class EmployeeService {
 	 * @param junk : Parameter for junk type.
 	 * @return : List of first name.
 	 */
-	
+
 	public List<String> getFirstNameByJunk(String junk) {
 		return employeeRepository.findFirstNameByJunk(junk);
 	}
-	
-	public List<Employee> getAllEmps()
-	{
-	
+
+	public List<Employee> getAllEmps() {
+
 		List<Employee> emps = employeeRepository.getAll();
 		Collections.sort(emps);
 		return emps;
-		
+
 	}
 }

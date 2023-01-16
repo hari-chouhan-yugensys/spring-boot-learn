@@ -57,7 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 												 "/swagger-ui/**", 
 												 "/v3/api-docs/**",
 												 "/register",
-												 "/actuator/**").permitAll().
+												 "/actuator/**",
+												 "/health").permitAll().
 				
 //				antMatchers("/home/**").hasAuthority("user").
 //				antMatchers("/sort/**").hasAuthority("admin").

@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.learn.startup.service.EmployeeService;
 import com.learn.startup.utill.InvalidCacheUtill;
-import com.sun.javafx.binding.StringFormatter;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
@@ -36,6 +36,7 @@ public class HomeController {
 		return "Ram Ram Sa : " + name;
 	}
 
+	//@PostMapping("/req")
 	@GetMapping("/req")
 	public String home(@RequestParam int id) {
 		return employeeService.getEmployeeByID(id).toString();

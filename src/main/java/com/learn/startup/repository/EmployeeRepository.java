@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.learn.startup.model.Employee;
 
+//@RepositoryRestResource(collectionResourceRel = "emp", path = "emp")
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
@@ -20,10 +22,13 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 	 * @return : List of first name.
 	 */
 	@Cacheable(value = "nameByJunk")
-	@Query(value="SELECT firstName from Employee where junk=:junk")
-	List<String> findFirstNameByJunk(@Param("junk")String junk);
-	
-	@Query(value="SELECT emp from Employee emp")
+	@Query(value = "SELECT firstName from Employee where junk=:junk")
+	List<String> findFirstNameByJunk(@Param("junk") String junk);
+
+	@Query(value = "SELECT emp from Employee emp")
 	List<Employee> getAll();
 	
+	@Procedure(name="test")
+	int getCount();
+
 }
