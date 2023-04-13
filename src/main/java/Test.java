@@ -9,13 +9,14 @@ import java.util.stream.Stream;
 
 public class Test {
 
+	
 	public Test() {
 		// TODO Auto-generated constructor stub
 	}
 
 	
-	public String getValue(String name) {
-		return name;}
+	public int getValue(String name) {
+		return 0;}
 	
 	public String getValue(int name) {
 		return "";}
