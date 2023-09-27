@@ -1,4 +1,4 @@
-# spring-boot-learn - Jenkins - Docker
+# spring-boot-learn - Jenkins - Docker.
 
 This repository contain all working copy of spring boot. 
 
